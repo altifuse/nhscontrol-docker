@@ -1,0 +1,12 @@
+---
+version: "3.9"
+services:
+  nhscontrol:
+    build: .
+    container_name: nhscontrol
+    ports:
+      # port for the web UI
+      - 2001:2001
+    devices:
+      # mapping for the device port in the host system. The application looks for the UPS at /dev/ttyS0 by default
+      - /dev/ttyUSB0:/dev/ttyS0
