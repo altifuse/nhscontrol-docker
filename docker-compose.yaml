@@ -10,3 +10,5 @@ services:
     devices:
       # mapping for the device port in the host system. The application looks for the UPS at /dev/ttyS0 by default
       - /dev/ttyUSB0:/dev/ttyS0
+    volumes:
+      - ./nhsupsserver.cfg:/var/lib/nhsups/nhsupsserver.cfg
