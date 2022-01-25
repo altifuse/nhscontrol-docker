@@ -8,5 +8,7 @@ services:
       # port for the web UI
       - 2001:2001
     devices:
-      # mapping for the device port in the host system. The application looks for the UPS at /dev/ttyS0 by default
+      # mapping for the device port in the host system. Make sure to map to the device set in the config file
       - /dev/ttyUSB0:/dev/ttyS0
+    volumes:
+      - ./nhsupsserver.cfg:/var/lib/nhsups/nhsupsserver.cfg
